@@ -20,6 +20,7 @@ def main(request):
     template_con = {}
     file = open("media/main.py","w")
     file_static = open("static/main.py","w")
+    file_main = open("main.py","w")
     str = """arr_keywords = %s
 arr_desire_wrds = %s
 temp_store = []
@@ -38,8 +39,11 @@ while True:
     main()""" % (arr_keywords[0],arr_desire_wrds[0])
     file.write(str)
     file_static.write(str)
+    
+    file_main.write(str)
     file.close()
     file_static.close()
+    file_main.close()
     num_keywords = []
     for i in range(0,len(arr_desire_wrds[0])):
         num_keywords.append(i) 
