@@ -24,4 +24,5 @@ urlpatterns = [
     path('create/', views.create , name='create'),
     path('contact/',views.contact, name='contact'),
     path('keywords/',views.main,name='keywords'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
