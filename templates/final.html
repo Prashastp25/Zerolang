@@ -1,0 +1,161 @@
+<html>
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{%static 'nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{%static 'Page-1.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{%static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{%static 'nicepage.js' %}" defer=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  </head>
+  <body>
+<title>Zero- Custom Programming Language</title>
+    <header class="u-clearfix u-header u-header" id="sec-1973" style="
+    background-color: #cc464c;
+    max-height: 55px;
+"><div class="u-clearfix u-sheet u-sheet-1"><ul style="
+    margin-top: 0px;
+    font-size: large;
+    font-family: 'Barlow';
+    color: white;
+"><li style="
+    margin-left: 0px;
+">Zero</li><li><a href="/">Home</a></li><li><a href="/create">Create</a></li><li><a href="/contact">Contact</a></li></ul>
+    <style>
+      .u-section-1{
+        background-image: url("/static/yyy.jpg");
+      }
+      .u-section-1 .u-image-1{
+        background-image: url("/static/ffffff.jpg");
+      }
+      navbar {
+  width: 100vw;
+  font-weight: bold;
+  background-color: #192024;}
+  ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em 0;
+    }
+
+    li:first-child {
+      margin-right: auto;
+      margin-left: 3em;
+      ;
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      padding-right: 2em;
+      position: relative;
+      transition: all ease-in-out 550ms;
+      text-decoration: none;
+    color:inherit;
+    }
+
+    li a::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 0.4em;
+      width: 0%;
+      background-color: var(--pink);
+      bottom: -1em;
+      transition: all ease-in-out 250ms;
+    }
+
+    li a:hover::after {
+      width:60%;
+    }
+    
+    li a:hover{
+      font-size: larger;
+      color: white;
+    }
+  
+  li{
+    margin-right: 10px;
+  }
+  body{
+    background: url("{% static 'wallpaper.png' %}");
+  }
+  #output-div{
+    margin: 10px;
+    border: aliceblue;
+    border-style: outset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 38%;
+    color: white;
+  }
+
+
+    </style>
+
+      </div></header>
+      <div style="    width: 90%;
+      margin-left: 5%;
+      margin-top: 1%;" class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+      </div>
+      <div id="output-div">
+               <h3 style="margin: 5px;">{{project_name}}</h3>
+        <p style="
+        margin-top: 40px;max-width: 65%;"> Here it is! Your very own programming language. 
+        To get started you just need to have python and this file which you created just now. 
+        So, go ahead and download this file, by clicking the on blue button on your right.
+      Click on Download with Python, if you dont have python installed in your computer. </p>
+<ul style="
+display: flex;
+flex-direction: column;
+margin-left: auto;
+"><li style="    margin-left: 0px;
+margin-right: 10px;margin-top: 10px;
+"><a href="/media/main.py"style="
+margin-left: auto;
+padding: 17px;
+background: #5d85f7;
+font-family: sans-serif;
+margin-top: auto;
+font-size: larger;
+" download>Download File</a></li><li style="
+margin-top: auto;margin-bottom: 10px;
+"><a style="
+margin-left: auto;
+padding: 17px;
+background: #5d85f7;
+font-family: sans-serif;
+margin-top: auto;
+font-size: larger;
+" href="https://www.python.org/downloads/">Download Python</a></li></ul>
+      </div>
+      <table class="table table-dark" style="width: 90%;
+      margin: auto;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Old keyword</th>
+            <th scope="col">Your keyword</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for number,old_keyword,your_keyword in keywords  %}
+          <tr>
+            <th scope="row">{{number}}</th>
+            <td>{{old_keyword}}</td>
+            <td>{{your_keyword}}</td>
+          </tr>
+        {% endfor %}
+        
+        </tbody>
+      </table>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</html>

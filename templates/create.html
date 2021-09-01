@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    {%load static%}
+    
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+    .form{
+
+        max-width: 90%;
+        margin: 10px;
+         
+        }
+    </style>
+
+  </head>
+  <body>
+    <title>Zero- Custom Programming Language</title>
+    <link rel="stylesheet" href="{%static 'nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{%static 'Page-1.css' %}" media="screen">
+    <header class="u-clearfix u-header u-header" id="sec-1973" style="
+    background-color: #cc464c;
+    max-height: 55px;
+"><div class="u-clearfix u-sheet u-sheet-1"><ul style="
+    margin-top: 0px;
+    font-size: large;
+    font-family: 'Barlow';
+    color: white;
+"><li style="
+    margin-left: 0px;
+">Zero</li><li><a href="/">Home</a></li><li><a href="/create">Create</a></li><li><a href="/contact">Contact</a></li></ul>
+    <style>
+      .u-section-1{
+        background-image: url("/static/yyy.jpg");
+      }
+      .u-section-1 .u-image-1{
+        background-image: url("/static/ffffff.jpg");
+      }
+      navbar {
+  width: 100vw;
+  font-weight: bold;
+  background-color: #192024;}
+  ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em 0;}
+
+    li:first-child {
+      margin-right: auto;
+      margin-left: 3em;
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      padding-right: 2em;
+      position: relative;
+      transition: all ease-in-out 550ms;
+      text-decoration: none;
+    color:inherit;
+    }
+
+    li a:hover::after {
+      width:60%;
+    }
+    
+    li a:hover{
+      font-size: larger;
+      color: white;
+      text-decoration: none !important;
+    }
+  
+  li{
+    margin-right: 10px;
+    margin-top: -5px;
+    
+  }
+
+
+  h1{
+    text-align: center;
+  }
+  .sub-heading{
+    text-align: center;
+  }
+  .form-row{
+    margin-top: 1%;
+  }
+    </style>
+
+      </div></header>
+      
+      <h1 style="position: absolute;
+      margin-left: 45%;
+      color: aliceblue;
+      background-color: #cc464c;
+      margin-top: 15%;
+      padding: 12px;
+      border-radius: 35%;">Create</h1>
+      <p class="sub-heading" style="position: absolute;
+      margin-left: 14%;
+      margin-top: 24%;
+      font-weight: 600;
+      color: aliceblue;
+      background-color: #cc464c;
+      padding: 5px;">Define the keywords that you want to replace and words that you want to use instead. We've got the rest off it!. </p>
+      <img src="{%static 'create.png' %}" style="height: 100%; width: 100%;">
+
+    <div id="form-div">
+
+        <button type="button" style="float: right;margin: 1px 10px 10px 10px;" onClick="addForm()" class="btn btn-info">+</button>
+        <form  id="form" class="form" action="/keywords/" method="get">
+          <div class="col" style="    max-width: 30%;
+          margin: auto;">
+            <input type="text" class="form-control" placeholder="Project Name" name="project-name">
+          </div>
+            <div class="form-row">
+              <div class="col" id="dropdown">
+                <select name="form" id="form-control" class="form-control" placeholder="First name" onchange="Custom(this)">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                    <option value="import" >print</option>
+                    <option value="custom">Custom..</option>
+                </select>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Your Keyword" name="out-word">
+              </div>
+            </div>
+            <div><button style="    margin-left: 45.5%;
+              margin-top: 1%;" type="submit" class="btn btn-primary" id="button">Generate</button>
+              </div>
+
+          </form>
+    </div>
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function addForm(){
+          var form = document.getElementById("form")
+          var button = document.getElementById("button")
+          button.remove()
+          document.getElementById("form").innerHTML += '<div class="form-row"> <div class="col" id="dropdown"> <select name="form" id="form-control" class="form-control" placeholder="Keyword" onchange="Custom(this)"> <option value="+">+</option> <option value="-">-</option> <option value="/">/</option> <option value="*">*</option> <option value="import" >import</option> <option value="custom">Custom..</option> </select> </div> <div class="col"> <input type="text" class="form-control" placeholder="Your Keyword" name="out-word"> </div> </div><div><button style=" margin-left: 45.5%; margin-top: 1%;" type="submit" class="btn btn-primary" id="button">Primary</button> </div>'
+          
+
+          //form.insertBefore('<div class="form-row"> <div class="col" id="dropdown"> <select type="" id="form-control" class="form-control" placeholder="First name" onchange="Custom(this)"> <option name="+">+</option> <option name="-">-</option> <option name="/">/</option> <option name="*">*</option> <option name="import">import</option> <option name="custom">Custom..</option> </select> </div> <div class="col"> <input type="text" class="form-control" placeholder="Last name"> </div> </div>', form.childNodes[-1]);
+        }
+        function Custom(element){
+          var selectBox = document.getElementsByClassName("form-control");
+          console.log(element)
+    var selectedValue = element.options[element.selectedIndex].value;
+    console.log(selectedValue)
+    if(selectedValue == "custom"){
+      var input = document.createElement("input");
+      input.setAttribute("style","display: block;width: 100%; height: calc(1.5em + .75rem + 2px); padding: .375rem .75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;")
+      input.setAttribute("name","form")
+      input.setAttribute("type","text")
+      var parent = element.parentElement;
+      element.remove();
+      parent.appendChild(input);
+    }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
