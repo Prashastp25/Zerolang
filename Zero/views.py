@@ -19,6 +19,7 @@ def main(request):
     temp_store = []
     template_con = {}
     file = open("media/main.py","w")
+    file_static = open("static/main.py","w")
     str = """arr_keywords = %s
 arr_desire_wrds = %s
 temp_store = []
@@ -27,18 +28,18 @@ def main():
     desire_wrds = input()
     arr_desire_wrds.append(desire_wrds)
     arr_keywords.append(keywords)
-    print(desire_wrds)
     fin = input()
     temp_store.append(fin)
     for index in range(0, len(arr_keywords)):
-        print("this"+arr_desire_wrds[index],arr_keywords[index])
-        print(fin.replace(arr_desire_wrds[index],arr_keywords[index]))
         temp_store.append(temp_store[-1].replace(arr_desire_wrds[index],arr_keywords[index]))
     exec(temp_store[-1])
 
 while True:
     main()""" % (arr_keywords[0],arr_desire_wrds[0])
     file.write(str)
+    file_static.write(str)
+    file.close()
+    file_static.close()
     num_keywords = []
     for i in range(0,len(arr_desire_wrds[0])):
         num_keywords.append(i) 
