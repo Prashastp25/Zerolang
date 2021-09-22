@@ -18,7 +18,7 @@ def main(request):
     print(arr_keywords,arr_desire_wrds)
     temp_store = []
     template_con = {}
-    file = open("media/main.py","w")
+    file = open("static/main.py","w")
     file_static = open("static/main.py","w")
     file_main = open("main.py","w")
     str = """arr_keywords = %s
