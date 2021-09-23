@@ -9,6 +9,6 @@ def create(request):
 def contact(request):
     return render(request,'contact.html')
 def main(request):
-    return render(request,'final.html',template_con)
+    return render(request,'final.html')
 
 
