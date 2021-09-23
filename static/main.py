@@ -26,8 +26,11 @@ def main():
     for index in range(0, len(arr_keywords)):
         if(type(arr_desire_wrds[index])==dict):
             dict_key, dict_val = zip(*arr_desire_wrds[index].items())
-            dict_list_key = list(dict_key)
-            dict_list_val = list(dict_val)
+            key_name = dict_key
+            dict_list_val = []
+            dict_list_key = []
+            dict_list_key.append(dict_val[0])
+            dict_list_val.append(dict_val[-1])
             for x in range(0, len(dict_list_key)):
                 temp_store.append(temp_store[-1].replace(dict_list_val[x],dict_list_key[x]))
         else:
